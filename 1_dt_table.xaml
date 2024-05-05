@@ -214,7 +214,7 @@
                   <InArgument x:TypeArguments="x:Int32">[dt_table.RowCount]</InArgument>
                 </Assign.Value>
               </Assign>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,91.2" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[numberOfPax.ToString]" />
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,91.2" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Total number of pax: &quot; + numberOfPax.ToString]" />
             </Sequence>
           </Sequence>
         </ActivityAction>
