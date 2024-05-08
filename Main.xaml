@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1027.2,628" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1027.2,1224" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="40">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,10 +39,12 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
-    </sco:Collection>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -90,9 +92,15 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="400,562.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="497.6,1158.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="male_21_30_Count" />
       <Variable x:TypeArguments="x:Int32" Name="male_31_40_Count" />
@@ -100,6 +108,14 @@
       <Variable x:TypeArguments="x:Int32" Name="female_21_30_Count" />
       <Variable x:TypeArguments="x:Int32" Name="female_31_40_Count" />
       <Variable x:TypeArguments="x:Int32" Name="female_41_50_Count" />
+      <Variable x:TypeArguments="x:Int32" Name="M20slimit" />
+      <Variable x:TypeArguments="x:Int32" Name="M40slimit" />
+      <Variable x:TypeArguments="x:Int32" Name="M30slimit" />
+      <Variable x:TypeArguments="x:Int32" Name="F20slimit" />
+      <Variable x:TypeArguments="x:Int32" Name="F30slimit" />
+      <Variable x:TypeArguments="x:Int32" Name="F40slimit" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_participants" />
+      <Variable x:TypeArguments="x:String" Name="dt_participants_string" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -107,26 +123,109 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="False" DisplayName="1_dt_table.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="1_dt_table.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="False" DisplayName="1_dt_table.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="435.6,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="1_dt_table.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_21_30_Count">[male_21_30_Count]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_31_40_Count">[male_31_40_Count]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_41_50_Count">[male_41_50_Count]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Female_21_30_Count">[female_21_30_Count]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Female_31_40_Count">[female_31_40_Count]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Female_41_50_Count">[female_41_50_Count]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_21_30_Count">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="male_21_30_Count" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_31_40_Count">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="male_31_40_Count" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_41_50_Count">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="male_41_50_Count" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Female_21_30_Count">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="female_21_30_Count" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Female_31_40_Count">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="female_31_40_Count" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_Female_41_50_Count">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="female_41_50_Count" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_datatable">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_participants" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="1_QuotaCalculator.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="1_QuotaCalculator.xaml">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="435.6,143.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[String.Format(&quot;At main flow Participant Counts - Male 21-30: {0}, Male 31-40: {1}, Male 41-50: {2},Female 21-30: {3}, Female 31-40: {4}, Female 41-50: {5}&quot;, &#xA;male_21_30_Count.ToString(), &#xA;male_31_40_Count.ToString(), &#xA;male_41_50_Count.ToString(), &#xA;female_21_30_Count.ToString(), &#xA;female_31_40_Count.ToString(),&#xA;female_41_50_Count.ToString())]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="1_QuotaCalculator.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="435.6,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="1_QuotaCalculator.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_M20s">[male_21_30_Count]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_F20s">[female_21_30_Count]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_M30s">[male_31_40_Count]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_F30s">[female_31_40_Count]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_F40s">[female_41_50_Count]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_M40s">[male_41_50_Count]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_M20s">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="male_21_30_Count" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_F20s">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="female_21_30_Count" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_M30s">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="male_31_40_Count" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_F30s">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="female_31_40_Count" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_F40s">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="female_41_50_Count" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_M40s">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="male_41_50_Count" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_M20slimit">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="M20slimit" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_M40slimit">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="M40slimit" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_M30slimit">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="M30slimit" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_F20slimit">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="F20slimit" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_F30slimit">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="F30slimit" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_F40slimit">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="F40slimit" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[String.Format(&quot;At main flow Participant Counts - Male 21-30: {0}, Male 31-40: {1}, Male 41-50: {2},Female 21-30: {3}, Female 31-40: {4}, Female 41-50: {5}&quot;, &#xA;male_21_30_Count.ToString(), &#xA;male_31_40_Count.ToString(), &#xA;male_41_50_Count.ToString(), &#xA;female_21_30_Count.ToString(), &#xA;female_31_40_Count.ToString(),&#xA;female_41_50_Count.ToString())]" />
+    <ui:OutputDataTable DataTable="[dt_participants]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="435.6,81.2" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[dt_participants_string]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.6,280.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,91.2" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;at main&quot; + dt_participants_string]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="1_FilterSelectParticipants.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="435.6,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="1_FilterSelectParticipants.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_M20slimit">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="M20slimit" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_M30slimit">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="M30slimit" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_M40slimit">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="M40slimit" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_F20slimit">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="F20slimit" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_F30slimit">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="F30slimit" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_F40slimit">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="F40slimit" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_participants">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_participants" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
