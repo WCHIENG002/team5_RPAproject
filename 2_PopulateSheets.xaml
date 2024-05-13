@@ -1,4 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_2_PopulateSheets" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="626,2080" sap2010:WorkflowViewState.IdRef="_2_PopulateSheets_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_2_PopulateSheets" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_datatable" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_dtSelected" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>854,2017.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_2_PopulateSheets_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
       <x:String>System.Activities</x:String>
@@ -107,7 +116,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_2_PopulateSheets" sap:VirtualizedContainerService.HintSize="636,2015" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_2_PopulateSheets" sap:VirtualizedContainerService.HintSize="636.6666666666666,1952.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_selected1" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_datatable" />
@@ -121,9 +130,30 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_selected1]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="574,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Form responses 1" WorkbookPath="Singles Event Registration (Responses) - Copy (1).xlsx" />
-    <ui:WriteRange AddHeaders="True" DataTable="[dt_selected1]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="574,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="SelectedParticipants.xlsx" />
-    <Assign sap:VirtualizedContainerService.HintSize="574,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="574.6666666666666,131.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[dt_selected1]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[in_dtSelected]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[dt_datatable]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[in_datatable]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:WriteRange AddHeaders="True" DataTable="[dt_selected1]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="574.6666666666666,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="SelectedParticipants.xlsx" />
+    <Assign sap:VirtualizedContainerService.HintSize="574.6666666666666,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[keys]</OutArgument>
       </Assign.To>
@@ -131,10 +161,9 @@
         <InArgument x:TypeArguments="s:String[]">[dt_selected1.AsEnumerable().Select(Function(r) r("Contact Number").ToString).ToArray()]</InArgument>
       </Assign.Value>
     </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="574,90" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[dt_selected1.Rows.Count.ToString]" TextWriter="{x:Null}" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="574,90" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[String.Join(&quot;, &quot;, keys)]" TextWriter="{x:Null}" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_datatable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="574,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Form Responses 1" WorkbookPath="Singles Event Registration (Responses).xlsx" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="574,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="574.6666666666666,92" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[dt_selected1.Rows.Count.ToString]" TextWriter="{x:Null}" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="574.6666666666666,92" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[String.Join(&quot;, &quot;, keys)]" TextWriter="{x:Null}" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="574.6666666666666,131.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -156,31 +185,31 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_datatablecopy]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="574,959" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_datatablecopy]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="574.6666666666666,976" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,843" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540.6666666666666,856" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[Not keys.Contains(row(&quot;Contact Number&quot;).ToString())]" sap:VirtualizedContainerService.HintSize="478,576" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Not keys.Contains(row(&quot;Contact Number&quot;).ToString())]" sap:VirtualizedContainerService.HintSize="478.6666666666667,589.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="400,297" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence sap:VirtualizedContainerService.HintSize="400,302" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[row.ItemArray]" DataTable="[dt_notselected]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[row.ItemArray]" DataTable="[dt_notselected]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,7 +218,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:WriteRange AddHeaders="True" DataTable="[dt_notselected]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="478,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="NotSelectedParticipants.xlsx" />
+            <ui:WriteRange AddHeaders="True" DataTable="[dt_notselected]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="478.6666666666667,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="NotSelectedParticipants.xlsx" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
