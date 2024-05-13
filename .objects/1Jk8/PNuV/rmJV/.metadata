@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome: Singles Event Registration (Responses) - Google Sheets",
+  "Type": "Screen",
+  "Id": "rmJVKPZi502dTYcV408IaA",
+  "Reference": "wX5rbS4G20yq1T5xVVSRbw/rmJVKPZi502dTYcV408IaA",
+  "ParentRef": "wX5rbS4G20yq1T5xVVSRbw/PNuVFJwm2EWovdx5oa4ykw",
+  "Created": "2024-05-09T12:22:37.931448Z",
+  "Updated": "2024-05-09T12:22:37.931448Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=23.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
