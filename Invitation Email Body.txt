@@ -1,0 +1,22 @@
+Dear {0} ,
+
+Thank you for expressing your interest in Consulting Company Z and our upcoming exclusive event on GenAI in Consulting.
+
+We have carefully reviewed your application and find your profile very interesting. 
+
+The event is scheduled to take place on:
+Date: 15th June 2024
+Location: Consulting Company Z, 48 Nanyang Drive, 12345 Singapore
+Venue: Graduate Hall 1
+Time: 17:30
+Registration Number: {1}
+
+We cordially invite you to attend this event. Your presence would be greatly appreciated.
+
+Kindly confirm your attendance by accepting this invitation.
+Please note that seating is limited, and if we do not receive a response by the specified date, we will extend the invitation to the next candidate on our waitlist.
+
+We are looking forward to see you at the event!
+
+Warm regards,
+Marketing Team Company Z

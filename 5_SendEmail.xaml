@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_5_SendEmail" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="774,1660" sap2010:WorkflowViewState.IdRef="_5_SendEmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_5_SendEmail" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="771.3333333333334,2900.6666666666665" sap2010:WorkflowViewState.IdRef="_5_SendEmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
       <x:String>System.Activities</x:String>
@@ -118,57 +118,49 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_5_SendEmail" sap:VirtualizedContainerService.HintSize="784,1595.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_5_SendEmail" sap:VirtualizedContainerService.HintSize="781.3333333333334,2836" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_selected" />
       <Variable x:TypeArguments="x:String" Name="emailAdress" />
+      <Variable x:TypeArguments="x:String" Name="emailTempInvitation" />
+      <Variable x:TypeArguments="x:String" Name="participantName" />
+      <Variable x:TypeArguments="x:String" Name="paricipantEmail" />
+      <Variable x:TypeArguments="x:String" Name="participantRegNo" />
+      <Variable x:TypeArguments="x:String" Name="applicantName" />
+      <Variable x:TypeArguments="x:String" Name="applicantEmail" />
+      <Variable x:TypeArguments="x:String" Name="emailTempRejection" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="722,192" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope: Send Invitation Email with Registration Number" sap:VirtualizedContainerService.HintSize="719.3333333333334,1358" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="685.3333333333334,1270.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </ActivityAction>
-      </ueab:ExcelProcessScopeX.Body>
-    </ueab:ExcelProcessScopeX>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="722,1252.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,1165.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="626,1054.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="Final Attendee List.xlsx">
+            <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="623.3333333333334,1160" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="pdfContent.xlsx">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,774" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="589.3333333333334,886" sap2010:WorkflowViewState.IdRef="Sequence_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="530,663.3333333333334" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_3" Range="[Excel.Sheet(&quot;sheet1&quot;).Range(&quot;A:F&quot;)]" SaveAfterEachRow="False">
+                    <ui:ReadTextFile File="{x:Null}" Content="[emailTempInvitation]" DisplayName="Read Text File" FileName="Invitation Email Body.txt" sap:VirtualizedContainerService.HintSize="527.3333333333334,81.33333333333333" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="527.3333333333334,654" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_4" Range="[Excel.Sheet(&quot;sheet1&quot;).Range(&quot;A:G&quot;)]" SaveAfterEachRow="False">
                       <ueab:ExcelForEachRowX.Body>
                         <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                           <ActivityAction.Argument1>
@@ -177,7 +169,97 @@
                           <ActivityAction.Argument2>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,465.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="493.3333333333333,460.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="um:IMailQuickHandle" Name="testEmail" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431.3333333333333,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[participantName]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[CurrentRow("Full name (as per NRIC)").ToString]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[paricipantEmail]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[CurrentRow("Email address").ToString]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[participantRegNo]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[CurrentRow("Registration No").ToString]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                            </ui:MultipleAssign>
+                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format( emailTempInvitation, participantName, participantRegNo)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="431.3333333333333,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Reg. No. &quot; + ParticipantRegNo + &quot;: Event Invitation: GenAI in Consulting&quot;]" To="[paricipantEmail]">
+                              <ui:SendOutlookMail.Files>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                              </ui:SendOutlookMail.Files>
+                            </ui:SendOutlookMail>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelForEachRowX.Body>
+                    </ueab:ExcelForEachRowX>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelProcessScopeX.Body>
+    </ueab:ExcelProcessScopeX>
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope: Send Rejection Email" sap:VirtualizedContainerService.HintSize="719.3333333333334,1327.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_4">
+      <ueab:ExcelProcessScopeX.Body>
+        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="684.6666666666666,1240" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReadTextFile File="{x:Null}" Content="[emailTempRejection]" DisplayName="Read Text File" FileName="Rejection Email Body.txt" sap:VirtualizedContainerService.HintSize="622.6666666666666,81.33333333333333" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+            <ueab:ExcelApplicationCard Password="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="622.6666666666666,1008" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" ReadFormatting="Default" ResizeWindow="None" WorkbookPath="NotSelectedParticipants.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="588.6666666666666,734" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="526.6666666666666,623.3333333333334" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_5" Range="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A:F&quot;)]" SaveAfterEachRow="False">
+                      <ueab:ExcelForEachRowX.Body>
+                        <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="492.6666666666667,430" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="um:IMailQuickHandle" Name="testEmail" />
                               <Variable x:TypeArguments="x:String" Name="attachementToSend" />
@@ -187,8 +269,29 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ueab:SaveAsPdfX EndPage="{x:Null}" StartPage="{x:Null}" DestinationPdfPath="[CurrentRow(&quot;Full name&quot;).ToString + &quot;_Reference_Code&quot;]" DisplayName="Save Excel File As PDF" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="SaveAsPdfX_1" SaveQuality="StandardQuality" Workbook="[Excel]" />
-                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear &quot; + CurrentRow(&quot;Full name&quot;).ToString + &quot;,&#xD;&#xA;&#xD;&#xA;Thank you for expressing your interest in Consulting Company Z and our upcoming exclusive event on GenAI in Consulting.&#xD;&#xA;&#xD;&#xA;We have carefully reviewed your application and find your profile very interesting. &#xD;&#xA;&#xD;&#xA;The event is scheduled to take place on:&#xD;&#xA;Date: 15th June 2024&#xD;&#xA;Location: Consulting Company Z, 48 Nanyang Drive, 12345 Singapore&#xD;&#xA;Venue: Graduate Hall 1&#xD;&#xA;Time: 17:30&#xD;&#xA;&#xD;&#xA;We cordially invite you to attend this event. Your presence would be greatly appreciated.&#xD;&#xA;&#xD;&#xA;Kindly confirm your attendance by accepting this invitation no later than 24th June 2024.&#xD;&#xA;Please note that seating is limited, and if we do not receive a response by the specified date, we will extend the invitation to the next candidate on our waitlist.&#xD;&#xA;&#xD;&#xA;We are looking forward to see you at the event!&#xD;&#xA;&#xD;&#xA;Warm regards,&#xD;&#xA;Marketing Team Company Z &quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,150.66666666666666" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Event Invitation: GenAI in Consulting" To="[CurrentRow(&quot;Email address&quot;).ToString]">
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.6666666666667,131.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[applicantName]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[CurrentRow("Full name (as per NRIC)").toString]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[applicantEmail]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[CurrentRow("Email address").ToString]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                            </ui:MultipleAssign>
+                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format( emailTempRejection, applicantName)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="430.6666666666667,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Fully booked: GenAI in Consulting" To="[applicantEmail]">
                               <ui:SendOutlookMail.Files>
                                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                               </ui:SendOutlookMail.Files>
