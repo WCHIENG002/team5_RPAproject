@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1360,1274</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>720,1274</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_4_pdfTicket_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -139,7 +139,7 @@
                 <InArgument x:TypeArguments="x:Object">[Welcoming]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[in_dtSelected]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="sheet1" WorkbookPath="pdfContent.xlsx" />
+            <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[in_dtSelected]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="sheet1" WorkbookPath="Final List with Registration No.xlsx" />
             <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[registrationNum]</OutArgument>
