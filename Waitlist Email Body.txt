@@ -1,0 +1,10 @@
+﻿Dear {0},
+
+Thank you for your interest in our upcoming Singles Event! Due to the overwhelming response, our event is currently at full capacity. However, we are pleased to inform you that you have been placed on the waitlist.
+
+We understand that being on a waitlist can be disappointing, but please rest assured that we are closely monitoring cancellations and will notify you immediately if a spot becomes available.
+
+Thank you once again for your interest, and we hope to welcome you to our event soon.
+
+Best regards,
+NTU RPA Team 5

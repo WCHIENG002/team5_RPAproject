@@ -1,9 +1,0 @@
-Dear {0},
-
-The event on GenAI in Consulting is fully booked already.
-We thank you for expressing your interest in Consulting Company Z and the upcoming event.
-
-We are looking forward to see you at one of our next events!
-
-Warm regards,
-Marketing Team Company Z
