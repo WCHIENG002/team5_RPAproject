@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1200.8,5371.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>726.4,5993.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_1_QuotaCalculator_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -115,7 +115,13 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_1_QuotaCalculator" sap:VirtualizedContainerService.HintSize="680,5306.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="_1_QuotaCalculator" sap:VirtualizedContainerService.HintSize="680,5928.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="MaleNum" />
       <Variable x:TypeArguments="x:Double" Name="F20slimit" />
@@ -131,87 +137,97 @@
       <Variable x:TypeArguments="x:String" Name="small" />
       <Variable x:TypeArguments="x:Int32" Name="TotalPax" />
       <Variable x:TypeArguments="x:Int32" Name="smallestdifference" />
-      <Variable x:TypeArguments="x:String" Name="smallestGroup" />
       <Variable x:TypeArguments="x:Double" Name="smallestQuota" />
       <Variable x:TypeArguments="x:Int32" Name="smallestSegmentsize" />
       <Variable x:TypeArguments="x:Int32" Name="SmallestIndex" />
       <Variable x:TypeArguments="x:Double" Name="newMax" />
+      <Variable x:TypeArguments="x:String" Name="SmallestGroup" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="617.6,447.2" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="492.8,368.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="617.6,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[in_M20s]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">3</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[in_M30s]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">10</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[in_M40s]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">14</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[in_F20s]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">4</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[in_F30s]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">7</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[in_F40s]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">18</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="617.6,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the expected number of participants. Number must be larger than 10 or the bot will terminate." Title="Max Participants">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:Int32">[MaxParticipants]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <If Condition="[MaxParticipants&lt;10]" sap:VirtualizedContainerService.HintSize="617.6,515.2" sap2010:WorkflowViewState.IdRef="If_5">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,232" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
-            <ui:MultipleAssign.AssignOperations>
-              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[in_M20s]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">3</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[in_M30s]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">10</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[in_M40s]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">14</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[in_F20s]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">4</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[in_F30s]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">7</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[in_F40s]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">18</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-              </scg:List>
-            </ui:MultipleAssign.AssignOperations>
-          </ui:MultipleAssign>
+          <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="337.6,120" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="You have entered a value less than 10. The bot will terminate now." />
         </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="617.6,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the expected number of participants" Title="Max Participants">
-      <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:Int32">[MaxParticipants]</OutArgument>
-      </ui:InputDialog.Result>
-    </ui:InputDialog>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,104.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
     <Assign sap:VirtualizedContainerService.HintSize="617.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TotalPax]</OutArgument>
@@ -220,7 +236,7 @@
         <InArgument x:TypeArguments="x:Int32">[in_F20s+in_M20s+in_F30s+in_M30s+in_F40s+in_M40s]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:BuildDataTable DataTable="[dt_quotas]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="617.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Index&quot; msdata:AutoIncrement=&quot;true&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Group&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;QuotaPercent&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;RegisteredNumbers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Ideal_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Difference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Re-balanced_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Index&gt;1&lt;/Index&gt;&#xD;&#xA;    &lt;Group&gt;Male 21-30&lt;/Group&gt;&#xD;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xD;&#xA;    &lt;RegisteredNumbers&gt;0&lt;/RegisteredNumbers&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Index&gt;2&lt;/Index&gt;&#xD;&#xA;    &lt;Group&gt;Female 21-30&lt;/Group&gt;&#xD;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Index&gt;3&lt;/Index&gt;&#xD;&#xA;    &lt;Group&gt;Male 31-40&lt;/Group&gt;&#xD;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Index&gt;4&lt;/Index&gt;&#xD;&#xA;    &lt;Group&gt;Female 31-40&lt;/Group&gt;&#xD;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Index&gt;5&lt;/Index&gt;&#xD;&#xA;    &lt;Group&gt;Male 41-50&lt;/Group&gt;&#xD;&#xA;    &lt;QuotaPercent&gt;0.1&lt;/QuotaPercent&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Index&gt;6&lt;/Index&gt;&#xD;&#xA;    &lt;Group&gt;Female 41-50&lt;/Group&gt;&#xD;&#xA;    &lt;QuotaPercent&gt;0.1&lt;/QuotaPercent&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[dt_quotas]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="617.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Index&quot; msdata:AutoIncrement=&quot;true&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Group&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;QuotaPercent&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;RegisteredNumbers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ideal_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Difference&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Recommended_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Index&gt;1&lt;/Index&gt;&#xA;    &lt;Group&gt;Male 21-30&lt;/Group&gt;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xA;    &lt;RegisteredNumbers&gt;1&lt;/RegisteredNumbers&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Index&gt;2&lt;/Index&gt;&#xA;    &lt;Group&gt;Female 21-30&lt;/Group&gt;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Index&gt;3&lt;/Index&gt;&#xA;    &lt;Group&gt;Male 31-40&lt;/Group&gt;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Index&gt;4&lt;/Index&gt;&#xA;    &lt;Group&gt;Female 31-40&lt;/Group&gt;&#xA;    &lt;QuotaPercent&gt;0.2&lt;/QuotaPercent&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Index&gt;5&lt;/Index&gt;&#xA;    &lt;Group&gt;Male 41-50&lt;/Group&gt;&#xA;    &lt;QuotaPercent&gt;0.1&lt;/QuotaPercent&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Index&gt;6&lt;/Index&gt;&#xA;    &lt;Group&gt;Female 41-50&lt;/Group&gt;&#xA;    &lt;QuotaPercent&gt;0.1&lt;/QuotaPercent&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
     <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="617.6,444" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
@@ -360,7 +376,7 @@
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
     <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" OutputDataTable="{x:Null}" ColumnIndex="[4]" DataTable="[dt_quotas]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="617.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" SortOrder="Ascending" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="617.6,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="617.6,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
@@ -403,12 +419,20 @@
               <InArgument x:TypeArguments="x:Double">[Math.round(smallestSegmentsize/smallestQuota)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_49">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[SmallestGroup]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[dt_quotas.Rows(0)(1).toString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <If Condition="[smallestdifference&lt;0]" sap:VirtualizedContainerService.HintSize="617.6,2675.2" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[smallestdifference&lt;0]" sap:VirtualizedContainerService.HintSize="617.6,2902.4" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="540,1535.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap:VirtualizedContainerService.HintSize="540,1656" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Int32" Name="newTotal" />
           </Sequence.Variables>
@@ -471,6 +495,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" OutputDataTable="{x:Null}" ColumnIndex="[0]" DataTable="[dt_quotas]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="477.6,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_3" Order="Ascending" SortOrder="Ascending" />
           <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="477.6,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
@@ -525,7 +550,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="477.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Registration_Summary.xlsx" />
+          <ui:WriteRange AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="477.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Registration_Summary.xlsx" />
           <Assign sap:VirtualizedContainerService.HintSize="477.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[newTotal]</OutArgument>
@@ -542,7 +567,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="337.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;One or more profiles unable to meet min quota. As there are only &quot; + smallestSegmentsize.ToString+ &quot; of  the &quot;+ smallestGroup +&quot; profile, new total participant numbers will be reduced to &quot; + newTotal.ToString + &quot; for optimal balance. This final number is too small to continue to hold the event, and the bot will terminate the process Please invite more applicants before running the bot again.&quot;]" />
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="337.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;One or more profiles unable to meet min quota. As there are only &quot; + smallestSegmentsize.ToString+ &quot; of  the &quot;+ SmallestGroup+&quot; profile, new total participant numbers will be reduced to &quot; + newTotal.ToString + &quot; for optimal balance. This final number is too small to continue to hold the event, and the bot will terminate the process Please invite more applicants before running the bot again.&quot;]" />
               </Sequence>
             </If.Then>
             <If.Else>
@@ -559,27 +584,15 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="497.6,961.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap:VirtualizedContainerService.HintSize="492.8,1068" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="435.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" WorkbookPath="Registration_Summary.xlsx" />
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,276" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-            <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,197.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="337.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;All quotas exceeded. Next step - filter by maximum limits&quot;]" />
-              </Sequence>
-            </ui:CommentOut.Body>
-          </ui:CommentOut>
-          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" OutputDataTable="{x:Null}" ColumnIndex="[0]" DataTable="[dt_quotas]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="435.2,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Ascending" SortOrder="Ascending" />
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="435.2,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="430.4,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;All quotas exceeded. Next step - filter by maximum limits&quot;]" />
+          <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" OutputDataTable="{x:Null}" ColumnIndex="[0]" DataTable="[dt_quotas]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="430.4,80.8" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Ascending" SortOrder="Ascending" />
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
@@ -633,6 +646,61 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[dt_quotas.Rows(0)(6)]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[out_M20slimit]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_44">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[dt_quotas.Rows(1)(6)]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[out_F20slimit]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_45">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[dt_quotas.Rows(2)(6)]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[out_M30slimit]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_46">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[dt_quotas.Rows(3)(6)]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[out_F30slimit]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_47">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[dt_quotas.Rows(4)(6)]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[out_M40slimit]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_48">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[dt_quotas.Rows(5)(6)]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[out_M40slimit]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:WriteRange AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="430.4,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Registration_Summary1.xlsx" />
         </Sequence>
       </If.Else>
     </If>
