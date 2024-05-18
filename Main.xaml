@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="678,4278" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="678,3323.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="80">
       <x:String>System.Activities</x:String>
@@ -107,7 +107,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="688,4212.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="688,3258" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="male_21_30_Count" />
       <Variable x:TypeArguments="x:Int32" Name="male_31_40_Count" />
@@ -134,7 +134,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="False" DisplayName="1_dt_table.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="1_dt_table.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="False" DisplayName="1_dt_table.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="1_dt_table.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_21_30_Count">[male_21_30_Count]</OutArgument>
         <OutArgument x:TypeArguments="x:Int32" x:Key="out_Male_31_40_Count">[male_31_40_Count]</OutArgument>
@@ -145,8 +145,8 @@
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_datatable">[dt_participants]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,142.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[String.Format(&quot;At main flow Participant Counts - Male 21-30: {0}, Male 31-40: {1}, Male 41-50: {2},Female 21-30: {3}, Female 31-40: {4}, Female 41-50: {5}&quot;, &#xA;male_21_30_Count.ToString(), &#xA;male_31_40_Count.ToString(), &#xA;male_41_50_Count.ToString(), &#xA;female_21_30_Count.ToString(), &#xA;female_31_40_Count.ToString(),&#xA;female_41_50_Count.ToString())]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="1_QuotaCalculator.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="1_QuotaCalculator.xaml">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,143.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[String.Format(&quot;At main flow Participant Counts - Male 21-30: {0}, Male 31-40: {1}, Male 41-50: {2},Female 21-30: {3}, Female 31-40: {4}, Female 41-50: {5}&quot;, &#xA;male_21_30_Count.ToString(), &#xA;male_31_40_Count.ToString(), &#xA;male_41_50_Count.ToString(), &#xA;female_21_30_Count.ToString(), &#xA;female_31_40_Count.ToString(),&#xA;female_41_50_Count.ToString())]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="1_QuotaCalculator.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="1_QuotaCalculator.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_M20s">[male_21_30_Count]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_F20s">[female_21_30_Count]</InArgument>
@@ -237,50 +237,16 @@
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtSelected">[dtSelected]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="626,90.8" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Completed 4_RegistrationNo" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="5_Send_Email_Selected.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="5_Send_Email_Selected.xaml">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="626,91.2" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Completed 4_RegistrationNo" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="5_Send_Email_Selected.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="5_Send_Email_Selected.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="6_Send_Email_Waitlist.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="6_Send_Email_Waitlist.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="6_Send_Email_Waitlist.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="6_Send_Email_Waitlist.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="626,134.8" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="626,742.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,656" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,544.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="pdfContent.xlsx">
-              <ueab:ExcelApplicationCard.Body>
-                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,272.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ueab:SaveAsPdfX DestinationPdfPath="ReferencetoSend.pdf" DisplayName="Save Excel File As PDF" EndPage="[1]" sap:VirtualizedContainerService.HintSize="434,161.2" sap2010:WorkflowViewState.IdRef="SaveAsPdfX_1" SaveQuality="StandardQuality" StartPage="[1]" Workbook="[Excel]" />
-                  </Sequence>
-                </ActivityAction>
-              </ueab:ExcelApplicationCard.Body>
-            </ueab:ExcelApplicationCard>
-          </Sequence>
-        </ActivityAction>
-      </ueab:ExcelProcessScopeX.Body>
-    </ueab:ExcelProcessScopeX>
   </Sequence>
 </Activity>
