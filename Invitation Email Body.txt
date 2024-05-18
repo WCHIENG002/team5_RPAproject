@@ -1,22 +1,18 @@
-Dear {0} ,
+﻿Dear {0} ,
 
-Thank you for expressing your interest in Consulting Company Z and our upcoming exclusive event on GenAI in Consulting.
+We are excited to invite you to our upcoming Singles Event, an opportunity to meet new people in a fun and relaxed environment. Our event is designed to ensure a balanced and enjoyable experience for everyone, with a carefully curated mix of participants by gender and age.
 
-We have carefully reviewed your application and find your profile very interesting. 
-
-The event is scheduled to take place on:
+Event Details:
 Date: 15th June 2024
-Location: Consulting Company Z, 48 Nanyang Drive, 12345 Singapore
-Venue: Graduate Hall 1
-Time: 17:30
+Time: 18:30 
+Venue: Gaia at NTU
 Registration Number: {1}
 
-We cordially invite you to attend this event. Your presence would be greatly appreciated.
+Please have your unique registration number ready when entering the venue.
 
-Kindly confirm your attendance by accepting this invitation.
-Please note that seating is limited, and if we do not receive a response by the specified date, we will extend the invitation to the next candidate on our waitlist.
+We cordially invite you to attend this event. Your presence would be greatly appreciated. Please note that seating is limited, and if you cannot attend the event, we will extend the invitation to the next candidate on our waitlist.
 
 We are looking forward to see you at the event!
 
 Warm regards,
-Marketing Team Company Z
+NTU RPA Team 5

@@ -205,7 +205,7 @@
                                 </scg:List>
                               </ui:MultipleAssign.AssignOperations>
                             </ui:MultipleAssign>
-                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format( emailTempInvitation, participantName, participantRegNo)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="431.3333333333333,150.66666666666666" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Reg. No. &quot; + ParticipantRegNo + &quot;: Event Invitation: GenAI in Consulting&quot;]" To="[paricipantEmail]">
+                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format( emailTempInvitation, participantName, participantRegNo)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="431.3333333333333,150.66666666666666" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Reg. No. &quot; + ParticipantRegNo + &quot;:Invitation to Our Upcoming Singles Event!&quot;]" To="[paricipantEmail]">
                               <ui:SendOutlookMail.Files>
                                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                               </ui:SendOutlookMail.Files>
