@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>726.4,5993.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>669.6,5696.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_1_QuotaCalculator_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -121,7 +121,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="_1_QuotaCalculator" sap:VirtualizedContainerService.HintSize="680,5928.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_1_QuotaCalculator" sap:VirtualizedContainerService.HintSize="680,5632" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="MaleNum" />
       <Variable x:TypeArguments="x:Double" Name="F20slimit" />
@@ -148,60 +148,6 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="617.6,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
-      <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Int32">[in_M20s]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">3</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Int32">[in_M30s]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">10</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Int32">[in_M40s]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">14</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Int32">[in_F20s]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">4</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Int32">[in_F30s]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">7</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Int32">[in_F40s]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">18</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-        </scg:List>
-      </ui:MultipleAssign.AssignOperations>
-    </ui:MultipleAssign>
     <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="617.6,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the expected number of participants. Number must be larger than 10 or the bot will terminate." Title="Max Participants">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:Int32">[MaxParticipants]</OutArgument>
@@ -700,11 +646,11 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:WriteRange AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="430.4,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Registration_Summary1.xlsx" />
+          <ui:WriteRange AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="430.4,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Registration_Summary.xlsx" />
         </Sequence>
       </If.Else>
     </If>
     <ui:OutputDataTable DataTable="[dt_quotas]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="617.6,80.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[dt_quotastring]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="617.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[dt_quotastring]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="617.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[dt_quotastring]" TextWriter="{x:Null}" />
   </Sequence>
 </Activity>
