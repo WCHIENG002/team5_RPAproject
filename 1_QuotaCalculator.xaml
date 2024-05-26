@@ -647,7 +647,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:WriteRange AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="431.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Registration_Summary1.xlsx" />
+          <ui:WriteRange AddHeaders="True" DataTable="[dt_quotas]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="431.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Registration_Summary.xlsx" />
         </Sequence>
       </If.Else>
     </If>
@@ -671,7 +671,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,91.2" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[dt_quotastring]" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,91.2" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[dt_quotastring]" TextWriter="{x:Null}" />
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
